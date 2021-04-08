@@ -17,7 +17,8 @@ class Track(Timing):
         __talks = {}
         lines = []
         try:
-            lines = [line.strip() for line in open('test.txt')]
+            with open('test.txt') as f:
+                lines = [line.strip() for line in f]
         except FileNotFoundError as e:
             print('File Not Found', e)
         for line in lines:
